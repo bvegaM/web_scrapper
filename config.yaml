@@ -1,0 +1,19 @@
+news_sites:
+  eluniversal:
+    url: http://www.eluniversal.com.mx
+    queries: 
+      homepage_article_links : '.type-article a'
+      article_body: '.field-name-body'
+      article_title: '.Encabezado-Articulo h1'
+  platzi:
+    url: https://platzi.com/blog
+    queries: 
+      homepage_article_links : '.Contribution .Contribution-link'
+      article_body: '.Discussion-content'
+      article_title: '.Discussion-title h1'
+  cnn:
+    url: https://cnnespanol.cnn.com
+    queries: 
+      homepage_article_links : '.news__data .news__title a'
+      article_body: '.storyfull__body'
+      article_title: '.storyfull__header h1'
