@@ -12,7 +12,7 @@ class NewsPage:
     def _visit(self,url):
         response = requests.get(url)
         response.encoding='utf-8'
-        
+
         response.raise_for_status()
 
         self._html = bs4.BeautifulSoup(response.text,'html.parser')
@@ -21,6 +21,7 @@ class NewsPage:
         self._config = config()['news_sites'][news_site_uid]
         self._queries = self._config['queries']
         self._html = None
+        self._url = url
 
         self._visit(url)
 
@@ -43,6 +44,10 @@ class ArticlePage(NewsPage):
     def __init__(self,news_site_uid,url):
         super().__init__(news_site_uid,url)
     
+    @property
+    def url(self):
+        return self._url
+
     @property
     def body(self):
         result = self._select(self._queries['article_body'])
