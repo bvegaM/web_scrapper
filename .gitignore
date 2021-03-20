@@ -1,3 +1,6 @@
+###### EXCLUYENDO ARCHIVOS CSV ######
 *.csv
+##### EXCLUYENDO CACHE DE PYTHON ######
 __pycache__/
+###### EXCLUYENDO CACHE DE JUPYTER NOTEBOOKS ######
 .ipynb_checkpoints/
